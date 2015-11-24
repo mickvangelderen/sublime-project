@@ -1,0 +1,40 @@
+{
+  "name": "sublime-project",
+  "version": "0.1.0",
+  "description": "Command line tool to generate a sublime-project file. ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel -d . es2015",
+    "watch": "babel -w -d . es2015"
+  },
+  "bin": {
+    "sublime-project": "./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/mickvangelderen/sublime-project.git"
+  },
+  "keywords": [
+    "generate",
+    "sublime",
+    "text",
+    "project"
+  ],
+  "author": "Mick van Gelderen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mickvangelderen/sublime-project/issues"
+  },
+  "homepage": "https://github.com/mickvangelderen/sublime-project#readme",
+  "dependencies": {
+    "bluebird": "^3.0.5",
+    "commander": "^2.9.0",
+    "debug": "^2.2.0",
+    "mkdirp": "^0.5.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.2.0",
+    "babel-preset-es2015": "^6.1.18"
+  }
+}
