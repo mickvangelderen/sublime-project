@@ -1,4 +1,4 @@
-#!/usr/bin/env babel-node
+#!/usr/bin/env node
 
 import debug from 'debug'
 import childProcess from 'child_process'
@@ -6,7 +6,7 @@ import commander from 'commander'
 import fs from 'fs'
 import mkdirp from 'mkdirp'
 import path from 'path'
-import pkg from './package.json'
+import pkg from '../package.json'
 import Promise from 'bluebird'
 
 Promise.promisifyAll(fs)

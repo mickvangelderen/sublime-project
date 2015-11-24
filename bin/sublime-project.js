@@ -1,4 +1,4 @@
-#!/usr/bin/env babel-node
+#!/usr/bin/env node
 'use strict';
 
 var _debug = require('debug');
@@ -25,7 +25,7 @@ var _path = require('path');
 
 var _path2 = _interopRequireDefault(_path);
 
-var _package = require('./package.json');
+var _package = require('../package.json');
 
 var _package2 = _interopRequireDefault(_package);
 

@@ -9,7 +9,7 @@
     "watch": "babel -w -d . es2015"
   },
   "bin": {
-    "sublime-project": "./index.js"
+    "sublime-project": "./bin/sublime-project.js"
   },
   "repository": {
     "type": "git",
