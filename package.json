@@ -1,40 +1,60 @@
 {
-  "name": "sublime-project",
-  "version": "0.1.1",
-  "description": "Command line tool to generate a sublime-project file. ",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel -d . es2015",
-    "watch": "babel -w -d . es2015"
+  "author": {
+    "email": "mickvangelderen@gmail.com",
+    "name": "Mick van Gelderen",
+    "url": "https://github.com/mickvangelderen"
   },
   "bin": {
-    "sublime-project": "./bin/sublime-project.js"
+    "sublime-project": "lib/bin/sublime-project.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/mickvangelderen/sublime-project.git"
+  "dependencies": {},
+  "description": "Command line tool to generate and open Sublime Text 3 projects.",
+  "devDependencies": {
+    "babel-cli": "^6.5.1",
+    "babel-core": "^6.5.2",
+    "babel-preset-es2015-node4": "^2.0.3",
+    "babel-register": "^6.5.2",
+    "chalk": "^1.1.1",
+    "eslint": "^2.0.0",
+    "funko": "^0.4.0",
+    "funko-fs": "^0.2.0",
+    "glob": "^7.0.3",
+    "log-2000": "^0.1.7",
+    "mocha": "^2.4.5",
+    "moment": "^2.12.0",
+    "must": "^0.13.1",
+    "semver": "^5.1.0",
+    "sort-object-circular": "^0.1.1"
+  },
+  "engines": {
+    "node": "^4.0.0",
+    "npm": "^3.0.0"
   },
   "keywords": [
     "generate",
+    "open",
     "sublime",
     "text",
+    "3",
     "project"
   ],
-  "author": "Mick van Gelderen",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/mickvangelderen/sublime-project/issues"
+  "license": "MIT",
+  "main": "lib/index.js",
+  "name": "sublime-project",
+  "repository": "git@github.com/mickvangelderen/sublime-project",
+  "scripts": {
+    "build": "babel src --out-dir lib --ignore \"*.test.js\"",
+    "check-node-version": "babel-node tools/check-node-version",
+    "clean": "rm -rf lib",
+    "lint": "eslint src test",
+    "post-checkout": "npm run -s resume",
+    "post-merge": "npm run -s resume",
+    "pre-commit": "npm run -s sort -- --error-on-changes && npm test",
+    "preversion": "npm run -s clean && npm run -s build",
+    "resume": "npm update && npm run -s check-node-version && npm prune && npm dedupe && npm outdated --long",
+    "setup": "cp tools/hooks/* .git/hooks/ && git config push.followTags true",
+    "sort": "babel-node tools/sort",
+    "test": "npm run -s check-node-version && npm run -s lint && mocha \"{src,test}/**/*.test.js\""
   },
-  "homepage": "https://github.com/mickvangelderen/sublime-project#readme",
-  "dependencies": {
-    "bluebird": "^3.0.5",
-    "commander": "^2.9.0",
-    "debug": "^2.2.0",
-    "mkdirp": "^0.5.1"
-  },
-  "devDependencies": {
-    "babel-cli": "^6.2.0",
-    "babel-preset-es2015": "^6.1.18"
-  }
+  "version": "0.1.1"
 }
