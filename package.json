@@ -8,6 +8,8 @@
     "sublime-project": "lib/bin/sublime-project.js"
   },
   "dependencies": {
+    "clone": "^1.0.2",
+    "deep-equal": "^1.0.1",
     "inquirer": "^0.12.0",
     "yargs": "^4.3.2"
   },
@@ -46,7 +48,7 @@
   "name": "sublime-project",
   "repository": "git@github.com/mickvangelderen/sublime-project",
   "scripts": {
-    "build": "babel src --out-dir lib --ignore \"*.test.js\"",
+    "build": "babel src --out-dir lib --ignore \"*.test.js\" && chmod +x lib/bin/*.js",
     "check-node-version": "babel-node tools/check-node-version",
     "clean": "rm -rf lib",
     "lint": "eslint src test",

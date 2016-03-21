@@ -1,12 +1,11 @@
-import Future from 'funko/lib/future'
 import getPath from '../util/get-path'
 import group from 'funko/lib/group'
-import inquirer from 'inquirer'
 import loadAutoConfigs from '../util/load-auto-configs'
 import loadCliConfig from '../util/load-cli-config'
 import loadPotentialNames from '../util/load-potential-names'
 import mkdirp from 'funko-fs/lib/mkdirp'
 import openProject from '../util/open-project'
+import prompt from '../util/prompt'
 import rejected from 'funko/lib/future/rejected'
 import resolved from 'funko/lib/future/resolved'
 import stat from 'funko-fs/lib/stat'
@@ -101,11 +100,6 @@ function maybeOpenProject(options) {
 		)
 	}
 }
-
-const prompt = options =>
-	Future((reject, resolve) =>
-		inquirer.prompt(options, result => resolve(result))
-	)
 
 function promptCandidates(candidates) {
 	const nameToCandidates = group(candidate => candidate.projectName, candidates)
