@@ -61,5 +61,5 @@
     "sort": "babel-node tools/sort",
     "test": "npm run -s check-node-version && npm run -s lint && mocha \"{src,test}/**/*.test.js\""
   },
-  "version": "0.2.1"
+  "version": "0.2.2"
 }
