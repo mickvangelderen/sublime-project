@@ -1,6 +1,6 @@
 # Usage guide
 
-This guide is for people who want to use NODE_PACKAGE_SKELETON_NAME. 
+This guide is for people who want to use sublime-project. 
 
 Other guides:
 * [Development guide](development.md)
@@ -17,15 +17,19 @@ npm install --global sublime-project
 
 Check out the available commands by running:
 
-### init
+```
+sublime-project --help
+```
+
+### sublime-project init
 
 The main purpose of `sublime-project init` is to create a `project-name.sublime-project` file. You can specify a path and name for the project, let it overwrite existing projects and immediately open the project if you so desire. 
 
-### open
+### sublime-project open
 
 The command `sublime-project open` lets you open a sublime project. It will use the specified strategies to determine location of the project file.
 
-### clean
+### sublime-project clean
 
 If you've ever wanted to remove references to removed projects from your recent projects list, `sublime-project clean` does just that. It will try to find the right Session.sublime_session file and remove paths in `workspaces.recent_projects` that do not exist on the file system. 
 
@@ -66,5 +70,4 @@ Check [`template.js`](examples/template.js) for a more elaborate example.
 
 ## Thanks
 
-This project uses [node-package-skeleton](https://github.com/mickvangelderen/node-package-skeleton) as a starting point for package development. 
->>>>>>> skeleton/master
+This project uses [node-package-skeleton](https://github.com/mickvangelderen/node-package-skeleton) as a starting point for package development.
