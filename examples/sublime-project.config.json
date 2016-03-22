@@ -1,4 +1,8 @@
 {
-	"interactive": true,
-	"templatePath": "/home/mick/projects/sublime-project/template.js"
+	"force": "ask",
+	"open": "ask",
+	"reminder": true,
+	"strategies": [ "package.json", "bower.json", "folder-name" ],
+	"templatePath": "/absolute/path/to/template.js",
+	"dataFolder": "/absolute/path/to/sublime-text/user-data/folder"
 }
